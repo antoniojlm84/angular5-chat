@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    position:relative;
+    width:100%;
+}
+
+body {
+    background-color:#e6e6e6;
+    font-weight:100;
+    margin:0;
+    min-height:100%;
+    width:100%;
+    font-family: Arial;
+}
+
+.row{
+    width: 100%;
+    padding: 5px 0px 5px 10px;
+}
+
+label{
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.form-control {
+    font-family: "PT Sans", sans-serif;
+    padding: 0.78rem 1.14rem;
+    color: #74708d;
+    display: block;
+    width: 94%;
+    font-size: 1rem;
+    line-height: 1.25;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    margin: 10px 0 10px 0;
+}
+
+button, input {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    overflow: visible;
+}
+
+.btn {
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: color .2s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
+    transition: color .2s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.btn.btn-primary, .show > .btn.btn-primary {
+    background-color: #0190fe;
+    border-color: #0190fe;
+    color: #ffffff
+}
+
+.container{
+    margin: 0 auto;
+    width: 50%;
+}
