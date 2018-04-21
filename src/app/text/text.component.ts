@@ -26,9 +26,9 @@ export class TextComponent implements OnInit {
           read: false
       };
 
-      this.messageService.getMessages().push(message);
+      this.messageService.pushMessage(message);
       // TODO: hacer un observable de esto
-      this.onClick.emit(message);
+      // this.onClick.emit(message);
   }
 
   constructor(private messageService: MessagesService) {

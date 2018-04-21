@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {MessagesService} from '../services/messages.service';
+import {MessageInterface} from '../interfaces/Message.interface';
 
 @Component({
   selector: 'app-board-output',
@@ -8,13 +9,15 @@ import {MessagesService} from '../services/messages.service';
 })
 export class BoardComponent implements OnInit {
 
-    @Input() content: Array<any>;
     @Output() onRead = new EventEmitter<any>();
+    messages: any;
 
     markAsRead(i) {
         this.onRead.emit(i);
     }
 
-    constructor(private messageService: MessagesService) { }
+    constructor(private messageService: MessagesService) {
+        this.messages = this.messageService.getMessages();
+    }
     ngOnInit() {}
 }

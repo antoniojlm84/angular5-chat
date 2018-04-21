@@ -1,7 +1,7 @@
 <h2>Chat board</h2>
 
 <div id="js-table-board">
-      <div *ngFor="let message of content; index as i">
+      <div *ngFor="let message of messages | async ; index as i;">
             <div [class.back_blue]="i%2===0" class="message" (click)="markAsRead(i)">
               <img src="/assets/images/icon.png" class="icon_read" *ngIf="message.read">
               <strong>{{ message.username }}</strong> <small>({{ message.date }})</small>

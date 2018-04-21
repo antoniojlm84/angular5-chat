@@ -11,7 +11,7 @@ export class ChatComponent {
 
   messages: Array<MessageInterface> = [];
   showMessage(ev) {
-     this.messages.push(ev);
+     this.messageService.pushMessage(ev);
   }
 
     constructor(private messageService: MessagesService) { }
