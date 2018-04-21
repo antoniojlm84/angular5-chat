@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {MessagesService} from '../messages.service';
+import {MessagesService} from '../services/messages.service';
 
 @Component({
   selector: 'app-board-output',
