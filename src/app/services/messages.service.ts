@@ -11,7 +11,7 @@ export class MessagesService {
   constructor() { }
 
   getMessages() {
-    // devuelvo el observable -> no el rray de mensajes a pelo
+    // devuelvo el observable -> no el array de mensajes a pelo
     return this.messages$;
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
 import {MessageInterface} from '../interfaces/Message.interface';
+import {UsersService} from '../services/users.service';
 
 @Component({
   selector: 'app-chat-root',
@@ -9,10 +10,13 @@ import {MessageInterface} from '../interfaces/Message.interface';
 })
 export class ChatComponent {
 
-  messages: Array<MessageInterface> = [];
+  loggedUser: string;
+
   showMessage(ev) {
      this.messageService.pushMessage(ev);
   }
 
-    constructor(private messageService: MessagesService) { }
+  constructor(private messageService: MessagesService, private userService: UsersService) {
+      this.loggedUser = userService.getUserLogged();
+  }
 }

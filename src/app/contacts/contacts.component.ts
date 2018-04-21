@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {UsersService} from '../services/users.service';
 
 @Component({
   selector: 'app-contacts',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  users: any;
+
+  constructor(private userService: UsersService) {
+      userService.getUsers().subscribe(users => {
+        console.log(users);
+        this.users = users['results'];
+      });
+  }
+
+  eventLogin(user) {
+      this.userService.setUserLogged(user);
+  }
 
   ngOnInit() {
   }

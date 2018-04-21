@@ -10,6 +10,8 @@ import { MessagesService } from './services/messages.service';
 import { ContactsComponent } from './contacts/contacts.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { appRoutes } from './app.routes';
   ],
   imports: [
     BrowserModule,
-      FormsModule,
-      RouterModule.forRoot(appRoutes)
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
-      MessagesService
+      MessagesService,
+      UsersService
   ],
   bootstrap: [AppComponent]
 })

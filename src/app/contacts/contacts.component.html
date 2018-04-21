@@ -1,3 +1,17 @@
-<p>
-  contacts works!
-</p>
+<h2>
+  Contacts
+</h2>
+
+<table>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td><img src="{{ user['picture']['thumbnail'] }}"></td>
+      <td>
+        <strong>{{ user['name']['last'] }},{{ user['name']['first'] }}</strong>
+        <br>
+        <small>{{ user['email'] }}</small>
+      </td>
+      <td><a routerLink="" routerLinkActive="active" (click)="eventLogin(user)">Login</a></td>
+    </tr>
+  </tbody>
+</table>

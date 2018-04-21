@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
-import {MessageInterface} from '../interfaces/Message.interface';
+import { MessageInterface} from '../interfaces/Message.interface';
 
 @Component({
   selector: 'app-text-input',
@@ -14,21 +14,19 @@ export class TextComponent implements OnInit {
   message: string;
   buttonLabel: string;
 
-  @Output() onClick = new EventEmitter<any>();
+  @Input() loggedUser: any;
   emitEvent() {
       const msgDate = new Date();
       const dateText = `${msgDate.getDay()}-${msgDate.getMonth() + 1}-${msgDate.getFullYear()} ${msgDate.getHours()}:${msgDate.getMinutes()}`;
 
       const message: MessageInterface = {
-          username: this.username,
+          username: this.loggedUser['name']['last'] + ', ' + this.loggedUser['name']['first'],
           message: this.message,
           date: dateText,
           read: false
       };
 
       this.messageService.pushMessage(message);
-      // TODO: hacer un observable de esto
-      // this.onClick.emit(message);
   }
 
   constructor(private messageService: MessagesService) {

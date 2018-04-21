@@ -1,8 +1,20 @@
-<p>Select the contact to login <a routerLink="contacts" routerLinkActive="active">here</a></p>
 
-<!--<label for="username">Username</label>
-<input [(ngModel)]="username" placeholder="username" id="username" name="username" name="username" type="text" class="form-control">-->
-<label for="message">Message</label>
-<textarea [(ngModel)]="message" name="message" id="message" cols="40" rows="2" class="form-control"></textarea>
+<div *ngIf="loggedUser == ''">
+    <p>Select the contact to login <a routerLink="contacts" routerLinkActive="active">here</a></p>
+</div>
 
-<button class="btn btn-primary" (click)="emitEvent()">{{ buttonLabel }}</button>
+<div *ngIf="loggedUser != ''">
+    <p>
+        Logged as
+        <br><br>
+        <strong>{{ loggedUser['name']['last'] }}, {{ loggedUser['name']['first'] }}</strong>
+        <br>
+        <small>{{ loggedUser['email'] }}</small>
+        <br><br>
+        <small>Change user <a routerLink="contacts" routerLinkActive="active">here</a></small>
+    </p>
+    <label for="message">Message</label>
+    <textarea [(ngModel)]="message" name="message" id="message" cols="40" rows="2" class="form-control"></textarea>
+
+    <button class="btn btn-primary" (click)="emitEvent()">{{ buttonLabel }}</button>
+</div>
