@@ -13,6 +13,7 @@ import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
 import { NewContactComponent } from './new-contact/new-contact.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NewContactComponent } from './new-contact/new-contact.component';
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
       MessagesService,
