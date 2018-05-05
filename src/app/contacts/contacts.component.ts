@@ -16,14 +16,14 @@ import {
     animations: [
         trigger('flyInOut', [
             state('false', style({
-                background: 'URL("/assets/images/loading.gif")',
-                display: 'block'
+                opacity: 1,
+                height: '256px'
             })),
             state('true', style({
-                background: 'none',
-                display: 'none'
+                opacity: 0,
+                height: '0px'
             })),
-            transition('inactive => active', animate('100ms ease-in')),
+            transition('false => true', animate('1000ms ease-in')),
         ])
     ]
 })
