@@ -48,6 +48,10 @@ label{
     margin: 10px 0 10px 0;
 }
 
+input.btn {
+    cursor: pointer;
+}
+
 button, input {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -85,4 +89,45 @@ button, input {
 .container{
     margin: 0 auto;
     width: 50%;
+}
+
+.ng-invalid.ng-dirty:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+
+a{
+    color:#909090;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#0190fe;
+}
+
+.new_contact{
+    font-size: 0.7em;
+}
+
+div.formGroup{
+    border-left: 0px !important;
+}
+
+div.formGroup label{
+    display: block;
+}
+
+input[type="submit"]:disabled {
+    background: #dddddd;
+    border: 1px solid #909090;
+    cursor: default;
+}
+
+.radio{
+    display: inline;
+}
+
+.radio input[type="radio"]{
+    display: inherit !important;
+    width: auto;
+    margin-right: 5px;
 }

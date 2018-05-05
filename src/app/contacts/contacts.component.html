@@ -1,11 +1,15 @@
 <h2>
   Contacts
+  <br>
+  <a class='new_contact' routerLink="new-contact" routerLinkActive="active">
+    Add contact
+  </a>
 </h2>
 
 <table>
   <tbody>
     <tr *ngFor="let user of users">
-      <td><img src="{{ user['picture']['thumbnail'] }}"></td>
+      <td><img src="{{ user?.picture?.thumbnail }}" width="48px"></td>
       <td>
         <strong>{{ user['name']['last'] }},{{ user['name']['first'] }}</strong>
         <br>

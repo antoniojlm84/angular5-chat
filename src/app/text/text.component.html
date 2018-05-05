@@ -4,17 +4,32 @@
 </div>
 
 <div *ngIf="loggedUser != ''">
-    <p>
-        Logged as
-        <br><br>
-        <strong>{{ loggedUser['name']['last'] }}, {{ loggedUser['name']['first'] }}</strong>
+    <form (ngSubmit)="submmitted()" #sendMsgForm="ngForm" >
+        <p>Logged as</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="3"><img src="{{ loggedUser['picture']['thumbnail'] }}" width="48px"></td>
+                </tr>
+            <tr>
+                <td>
+                    <strong>{{ loggedUser['name']['last'] }}, {{ loggedUser['name']['first'] }}</strong>
+                    <br>
+                    <small>{{ loggedUser['email'] }}</small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
         <br>
-        <small>{{ loggedUser['email'] }}</small>
-        <br><br>
         <small>Change user <a routerLink="contacts" routerLinkActive="active">here</a></small>
-    </p>
-    <label for="message">Message</label>
-    <textarea [(ngModel)]="message" name="message" id="message" cols="40" rows="2" class="form-control"></textarea>
 
-    <button class="btn btn-primary" (click)="emitEvent()">{{ buttonLabel }}</button>
+        <br><br>
+
+        <label for="message">Message</label>
+        <textarea required [(ngModel)]="message" name="message" id="message" cols="40" rows="2" class="form-control"></textarea>
+
+        <input type="submit" class="btn btn-primary" value="{{ buttonLabel }}">
+    </form>
+
+    <p *ngIf="!sendMsgForm.valid" class="alert alert-danger">Message can not be empty</p>
 </div>

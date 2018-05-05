@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { User } from '../interfaces/User.interface';
 
 @Injectable()
 export class UsersService {
@@ -21,6 +22,10 @@ export class UsersService {
 
     getUsers() {
         return this.users ? Observable.of(this.users) : this.users$ ;
+    }
+
+    addUser(user: User) {
+        this.users.results.push(user);
     }
 
     setUserLogged (user) {

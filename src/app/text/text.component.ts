@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
 import { MessageInterface} from '../interfaces/Message.interface';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
@@ -14,8 +15,9 @@ export class TextComponent implements OnInit {
   message: string;
   buttonLabel: string;
 
+  @ViewChild('sendMsgForm') public form: NgForm;
   @Input() loggedUser: any;
-  emitEvent() {
+  submmitted() {
       const msgDate = new Date();
       const dateText = `${msgDate.getDay()}-${msgDate.getMonth() + 1}-${msgDate.getFullYear()} ${msgDate.getHours()}:${msgDate.getMinutes()}`;
 
@@ -27,7 +29,7 @@ export class TextComponent implements OnInit {
       };
 
       this.messageService.pushMessage(message);
-  }
+  };
 
   constructor(private messageService: MessagesService) {
       this.buttonLabel = 'Send';

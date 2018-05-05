@@ -1,0 +1,45 @@
+<h2>
+  New Contact
+  <br>
+  <a class='new_contact' routerLink="/contacts" routerLinkActive="active">
+    Back
+  </a>
+</h2>
+
+<form (ngSubmit)="submmitted()" [formGroup]="newContactForm">
+    <div formGroupName="name" class="formGroup">
+        <label>Name</label>
+        <input type="text" formControlName="first" class="form-control">
+        <small [hidden]="newContactForm.get('name.first').valid || newContactForm.get('name.first').pristine" class="alert alert-danger">
+            Fisrt name can not be empty
+        </small>
+        <input type="text" formControlName="last" class="form-control">
+        <small [hidden]="newContactForm.get('name.last').valid || newContactForm.get('name.last').pristine" class="alert alert-danger">
+            Last name can not be empty
+        </small>
+    </div>
+    <div class="formGroup">
+      <label>Email</label>
+      <input type="text" formControlName="email" class="form-control">
+      <small [hidden]="newContactForm.get('email').valid || newContactForm.get('email').pristine" class="alert alert-danger">
+        Email name can not be empty and must be a valid email
+      </small>
+    </div>
+    <div formGroupName="address" class="formGroup">
+        <label>Address</label>
+        <input type="text" formControlName="street" class="form-control">
+        <small [hidden]="newContactForm.get('address.street').valid || newContactForm.get('address.street').pristine" class="alert alert-danger">
+            Street can not be empty
+        </small>
+    </div>
+    <div class="formGroup">
+      <label>Gender</label>
+      <span class="radio">Male <input type="radio" formControlName="gender" class="form-control" value="male"></span>
+      <span class="radio">Female <input type="radio" formControlName="gender" class="form-control" value="female"></span>
+      <small [hidden]="newContactForm.get('gender').valid || newContactForm.get('gender').pristine" class="alert alert-danger">
+        Gender name can not be empty and must be a valid email
+      </small>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Add" [disabled]="!newContactForm.valid">
+</form>
