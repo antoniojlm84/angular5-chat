@@ -9,13 +9,13 @@
         <table>
             <tbody>
                 <tr>
-                    <td rowspan="3"><img src="{{ loggedUser['picture']['thumbnail'] }}" width="48px"></td>
+                    <td rowspan="3"><img src="{{ loggedUser?.picture?.thumbnail }}" width="48px"></td>
                 </tr>
             <tr>
                 <td>
-                    <strong>{{ loggedUser['name']['last'] }}, {{ loggedUser['name']['first'] }}</strong>
+                    <strong>{{ loggedUser?.name?.last }}, {{ loggedUser?.name?.first }}</strong>
                     <br>
-                    <small>{{ loggedUser['email'] }}</small>
+                    <small>{{ loggedUser?.email }}</small>
                 </td>
             </tr>
             </tbody>

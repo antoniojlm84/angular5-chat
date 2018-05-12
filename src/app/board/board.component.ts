@@ -1,6 +1,5 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {MessagesService} from '../services/messages.service';
-import {MessageInterface} from '../interfaces/Message.interface';
 
 @Component({
   selector: 'app-board-output',

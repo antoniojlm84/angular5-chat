@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
-import {MessageInterface} from '../interfaces/Message.interface';
-import {UsersService} from '../services/users.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-chat-root',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
+
 export class ChatComponent {
 
   loggedUser: string;

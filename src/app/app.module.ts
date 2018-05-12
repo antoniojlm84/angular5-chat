@@ -5,7 +5,7 @@ import { AppComponent} from './app.component';
 import { ChatComponent} from './chat/chat.component';
 import { TextComponent } from './text/text.component';
 import { BoardComponent } from './board/board.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MessagesService } from './services/messages.service';
 import { ContactsComponent } from './contacts/contacts.component';
 import { RouterModule } from '@angular/router';

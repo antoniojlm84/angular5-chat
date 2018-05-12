@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
 import { MessageInterface} from '../interfaces/Message.interface';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
@@ -11,7 +11,6 @@ import {NgForm} from '@angular/forms';
 
 export class TextComponent implements OnInit {
 
-  username: string;
   message: string;
   buttonLabel: string;
 
